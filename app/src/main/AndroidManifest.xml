@@ -12,6 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name=".Application"
+
+        android:usesCleartextTraffic="true"
         >
         <meta-data android:name="distribution_group" android:value="@string/distribution_group" />
         <activity android:name=".MainActivity">
