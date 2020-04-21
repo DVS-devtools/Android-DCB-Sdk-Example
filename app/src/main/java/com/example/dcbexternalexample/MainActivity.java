@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.buongiorno.newton.NewtonError;
@@ -30,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
                 runOnUiThread(() -> {
                     //User is recognised as Docomo Acquisition​
                     ((TextView) findViewById(R.id.text)).setText("subscribed: " + dcbUser.isSubscribed);
+
+                    Toast.makeText(MainActivity.this.getApplicationContext(), "msisdn: "+ dcbUser.getId(MainActivity.this.getApplicationContext()), Toast.LENGTH_LONG).show();
+
 
                     //SAVE dcbUser.utcExpirationUnixTime IN THE PREFERENCE TO CHECK THE SUBSCRIPTION IN THE APP
                     if (dcbUser.utcExpirationUnixTime > System.currentTimeMillis() / 1000){

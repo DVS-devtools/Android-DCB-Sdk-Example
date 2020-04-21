@@ -10,7 +10,7 @@ public class Application extends android.app.Application {
     public void onCreate() {
         super.onCreate();
 
-        DcbExternal.dcbWith(this, "556a42415047494483", "fr-kidjoadv", "external", "fr", "http://www.kidjotv.ru", null, false);
+        DcbExternal.dcbWith(this, "556a42415047494483", "fr-kidjoadv", "external", "fr", "http://acq.kidjo.tv", null, false);
 
         //Dcb.with(this, "556a42415047494483", "ru-kidjo", "lite", "ru", "http://www.kidjotv.ru/", null, false);
         //Dcb.with(this, "556a42415047494483", "ww-kidzinmind", "news", "ru", "http://www.kidzinmind.com/", null, false);
