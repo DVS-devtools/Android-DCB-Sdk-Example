@@ -9,6 +9,7 @@ public class Application extends android.app.Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        //todo current kidjo conf    Dcb.with(this, "556a42415047494483", "fr-kidjoadv", "external", "fr", "http://acq.kidjo.tv", null,false);
 
         DcbExternal.dcbWith(this, "556a42415047494483", "fr-kidjoadv", "external", "fr", "http://acq.kidjo.tv", null, false);
 
