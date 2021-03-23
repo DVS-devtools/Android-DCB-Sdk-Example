@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        DcbExternal.dcbRecognise(new DcbCallback() {
+        DcbExternal.dcbRecognise(this, new DcbCallback() {
             @Override
             public void onSuccess(DocomoUser dcbUser) {
                 runOnUiThread(() -> {

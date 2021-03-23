@@ -16,15 +16,6 @@
 app/release/app-release.apk
 app/release/bundle.aab
 app/release/output.json
-*.iml
-.gradle
-/local.properties
-/.idea/workspace.xml
-/.idea/libraries
-.DS_Store
-/build
-/captures
-
 
 # Built application files
 /*/build/
@@ -64,7 +55,6 @@ local.properties
 ehthumbs.db
 Thumbs.db
 .idea/dictionaries/
-app/libs/
 src/main/res/color/
 fabric.properties
 release/
