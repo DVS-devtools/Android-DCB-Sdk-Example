@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.buongiorno.newton.NewtonError;
 import com.docomodigital.sdk.DcbExternal;
+import com.docomodigital.sdk.dcb.LibrarySettings;
 import com.docomodigital.sdk.dcb.interfaces.DcbCallback;
 
 import com.docomodigital.sdk.dcb.model.DocomoUser;
@@ -32,24 +33,21 @@ public class MainActivity extends AppCompatActivity {
                     //User is recognised as Docomo Acquisition​
                     ((TextView) findViewById(R.id.text)).setText("subscribed: " + dcbUser.isSubscribed);
 
-                    Toast.makeText(MainActivity.this.getApplicationContext(), "msisdn: "+ dcbUser.getId(MainActivity.this.getApplicationContext()), Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this.getApplicationContext(), "msisdn: " + dcbUser.getId(MainActivity.this.getApplicationContext()), Toast.LENGTH_LONG).show();
 
 
                     //SAVE dcbUser.utcExpirationUnixTime IN THE PREFERENCE TO CHECK THE SUBSCRIPTION IN THE APP
-                    if (dcbUser.utcExpirationUnixTime > System.currentTimeMillis() / 1000){
+                    if (dcbUser.utcExpirationUnixTime > System.currentTimeMillis() / 1000) {
                         //user is premium
                         ((TextView) findViewById(R.id.text)).setText("subscribed: " + dcbUser.isSubscribed +
                                 "; expireday unix: " + dcbUser.utcExpirationUnixTime +
-                                "; expire date: " + new Date(dcbUser.utcExpirationUnixTime * 1000).toString());
-                    }
-
-                    else{
+                                "; expire date: " + new Date(dcbUser.utcExpirationUnixTime * 1000).toString() + "  domain:" + LibrarySettings.getWebappBaseUrl(getBaseContext()));
+                    } else {
                         //user is expired
                         ((TextView) findViewById(R.id.text)).setText("subscribed: " + dcbUser.isSubscribed +
                                 "; expireday unix: " + dcbUser.utcExpirationUnixTime +
-                                "; expire date: " + new Date(dcbUser.utcExpirationUnixTime * 1000).toString());
+                                "; expire date: " + new Date(dcbUser.utcExpirationUnixTime * 1000).toString() + "  domain:" + LibrarySettings.getWebappBaseUrl(getBaseContext()));
                     }
-
 
 
                     if (dcbUser.isSubscribed) {
@@ -57,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
                         ((TextView) findViewById(R.id.text)).setText("subscribed: " + dcbUser.isSubscribed +
                                 "; expireday unix: " + dcbUser.utcExpirationUnixTime +
-                                "; expire date: " + new Date(dcbUser.utcExpirationUnixTime * 1000).toString());
+                                "; expire date: " + new Date(dcbUser.utcExpirationUnixTime * 1000).toString() + "  domain:" + LibrarySettings.getWebappBaseUrl(getBaseContext()));
                     } else {
                         //User expired, not subscribed​
                         //user must pay again to access the product​

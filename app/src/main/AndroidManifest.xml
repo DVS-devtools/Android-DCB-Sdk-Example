@@ -15,7 +15,6 @@
 
         android:usesCleartextTraffic="true"
         >
-        <meta-data android:name="distribution_group" android:value="@string/distribution_group" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
