@@ -12,7 +12,7 @@ public class Application extends android.app.Application {
         //todo current kidjo conf    Dcb.with(this, "556a42415047494483", "fr-kidjoadv", "external", "fr", "http://acq.kidjo.tv", null,false);
 
         //DcbExternal.dcbWith(this, "556a42415047494483", "xx-gameasy", "games", "xx", "http://www.gameasy.com", null, false);
-        DcbExternal.dcbWith(this, "556a42415047494483", "fr-kidjoadv", "external", "fr", "http://acq.kidjo.tv", null,false);
+        DcbExternal.dcbWith(this, "556a42415047494483", "fr-kidjoadv", "external", "fr", "http://acq.kidjo.tv", null, false);
         //Dcb.with(this, "556a42415047494483", "ru-kidjo", "lite", "ru", "http://www.kidjotv.ru/", null, false);
         //Dcb.with(this, "556a42415047494483", "ww-kidzinmind", "news", "ru", "http://www.kidzinmind.com/", null, false);
        /* Dcb.with(this, "556a42415047494483", "fr-kidjoadv", "external", "fr", "http://www2.kidjotv.ru", "http://api2.motime.com/", new Dcb.DcbListener() {
@@ -32,6 +32,10 @@ public class Application extends android.app.Application {
             }
         },false, false);*/
 
+        if (BuildConfig.BUILD_VARIANT.equals("newtonqa")) {
+            Dcb.getInstance().setQa(true);
+            Dcb.getInstance().setQaBridge(true);
+        }
 
     }
 }
