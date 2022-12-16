@@ -2,7 +2,6 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 30
-    buildToolsVersion "29.0.3"
     defaultConfig {
         applicationId "com.digitalvirgo.dcbexternaltestapp"
         minSdkVersion 18
@@ -44,6 +43,7 @@ android {
         sourceCompatibility = 1.8
         targetCompatibility = 1.8
     }
+    namespace 'com.example.dcbexternalexample'
 }
 
 dependencies {
