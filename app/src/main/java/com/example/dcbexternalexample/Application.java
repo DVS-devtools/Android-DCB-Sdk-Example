@@ -1,6 +1,6 @@
 package com.example.dcbexternalexample;
 
-
+import com.example.dcbexternalexample.BuildConfig;
 import com.docomodigital.sdk.Dcb;
 import com.docomodigital.sdk.DcbExternal;
 
@@ -32,7 +32,7 @@ public class Application extends android.app.Application {
             }
         },false, false);*/
 
-        if (BuildConfig.BUILD_VARIANT.equals("newtonqa")) {
+        if (BuildConfig.BUILD_TYPE.equals("newtonqa")) {
             Dcb.getInstance().setQa(true);
             Dcb.getInstance().setQaBridge(true);
         }
