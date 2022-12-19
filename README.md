@@ -28,7 +28,7 @@ We will provide the aars to integrate in your application
 ## Step 1 / 5 - Add Maven URL
 In the project build.gradle file add necessary maven url
 Note: the build.gradle placed on the root of the android project
-
+```
 ....
 
 	allprojects {
@@ -43,7 +43,7 @@ Note: the build.gradle placed on the root of the android project
 	}
 
 	....
-          		
+```          		
 
 
        	
@@ -52,7 +52,8 @@ Note: the build.gradle placed on the root of the android project
 ## Step 2 / 5 - Add gradle dependencies
 In the app build.gradle file add the new two dependencies
 
-apply plugin: 'com.android.application'
+`apply plugin: 'com.android.application'`
+```
   ....
 	dependencies {
 	    ....
@@ -69,13 +70,13 @@ apply plugin: 'com.android.application'
 	}
           		
 ....
-
+```
 
 
 
 ## Step 3 / 5 - Add manifest permissions
 In your AndroidManifest.xml add (if is absent) one new permissions INTERNET and check which is your main android.intent.category.LAUNCHER Activity class, also be sure to extend Application class (here named App)
-
+```
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     .....>
@@ -98,22 +99,23 @@ In your AndroidManifest.xml add (if is absent) one new permissions INTERNET and 
                 </activity>
             
             .....
-
+```
 
 remember to add that line, to give the possibility to have call http and not only https (from android 10 is necessary)
 
-
+```
  <application ....
  android:usesCleartextTraffic="true"
 ....
-
+```
 
 
 
 ## Step 4 / 5 - Add the library bootstrap
 In your APPLICATION add the call to 
 
-DcbExternal.dcbWith(...) just after the super.onCreate()
+`DcbExternal.dcbWith(...) just after the super.onCreate()`
+```
 ....
 import com.docomodigital.sdk.DcbExternal;
 
@@ -125,8 +127,7 @@ public class Application extends android.app.Application {
 
  DcbExternal.dcbWith(this, "apikey", "product-id", "namespace", "us", "host", null, false);
 ....
-
-
+```
 
 
 
@@ -139,9 +140,9 @@ All configuration parameters are provided by DigitalVirgo. The last two argument
 ## Step 5 / 5 - Call the "DcbRecognise" method to get the data
 In your LAUNCHER Activity retrieve a Dcb instance and try to call recognise method 
 
-DcbExternal.dcbRecognise(.....
-Just after the super.onCreate(savedInstanceState)
-
+`DcbExternal.dcbRecognise(.....`
+Just after the `super.onCreate(savedInstanceState)`
+```
 ....
 
 
@@ -202,7 +203,7 @@ DcbExternal.dcbRecognise(this, new DcbCallback() {
  }
 });
 ....
-
+```
 
 
 
