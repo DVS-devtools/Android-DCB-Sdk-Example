@@ -33,10 +33,14 @@ Note: the build.gradle placed on the root of the android project
 
 	allprojects {
 	    repositories {
-	        jcenter()
-
+            google()
+            mavenCentral()
+            jcenter()
 	        /* Used by  dcb sdk */
-                maven { url "http://static.newton.pm/android" }
+            flatDir {
+                dirs 'libs'
+            }
+
 
 
 	    }
@@ -59,11 +63,12 @@ In the app build.gradle file add the new two dependencies
 	    ....
 
            /* The okhttp depency is needed for  sdk.*/
-             implementation 'com.squareup.okhttp3:okhttp:3.10.0'
-             implementation 'com.squareup.okhttp3:okhttp-urlconnection:3.10.0'
-             implementation 'com.buongiorno:newton:3.3.0@aar'
-             implementation "com.google.code.gson:gson:2.8.6"
-             implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.61"
+            api files('libs/dcb_sdk-3.4.4.aar')
+            implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+            implementation 'com.squareup.okhttp3:okhttp-urlconnection:3.10.0'
+            implementation 'com.buongiorno:newton:3.6.2@aar''
+            implementation "com.google.code.gson:gson:2.8.6"
+            implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.61"
 
 
 
