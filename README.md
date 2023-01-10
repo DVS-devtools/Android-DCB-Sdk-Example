@@ -28,7 +28,7 @@ We will provide the aars to integrate in your application
 ## Step 1 / 5 - Add Maven URL
 In the project build.gradle file add necessary maven url
 Note: the build.gradle placed on the root of the android project
-```
+```java
 ....
 
 	allprojects {
@@ -57,7 +57,7 @@ Note: the build.gradle placed on the root of the android project
 In the app build.gradle file add the new two dependencies
 
 `apply plugin: 'com.android.application'`
-```
+```java
   ....
 	dependencies {
 	    ....
@@ -81,7 +81,7 @@ In the app build.gradle file add the new two dependencies
 
 ## Step 3 / 5 - Add manifest permissions
 In your AndroidManifest.xml add (if is absent) one new permissions INTERNET and check which is your main android.intent.category.LAUNCHER Activity class, also be sure to extend Application class (here named App)
-```
+```java
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     .....>
@@ -108,7 +108,7 @@ In your AndroidManifest.xml add (if is absent) one new permissions INTERNET and 
 
 remember to add that line, to give the possibility to have call http and not only https (from android 10 is necessary)
 
-```
+```java
  <application ....
  android:usesCleartextTraffic="true"
 ....
@@ -119,8 +119,8 @@ remember to add that line, to give the possibility to have call http and not onl
 ## Step 4 / 5 - Add the library bootstrap
 In your APPLICATION add the call to 
 
-`DcbExternal.dcbWith(...) just after the super.onCreate()`
-```
+`DcbExternal.dcbWith(...) just after the super.onCreate()`java
+```java
 ....
 import com.docomodigital.sdk.DcbExternal;
 
@@ -147,7 +147,7 @@ In your LAUNCHER Activity retrieve a Dcb instance and try to call recognise meth
 
 `DcbExternal.dcbRecognise(.....`
 Just after the `super.onCreate(savedInstanceState)`
-```
+```java
 ....
 
 
